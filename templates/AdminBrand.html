@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+</head>
+<body>
+{% block content %}
+<div class="container">
+    <div class="container">
+        <div class="row row-cols-3">
+            <div class="col"><a href="/AdminBrandInsert" class="list-group-item">INSERT</a></div>
+            <div class="col"><a href="/AdminBrandDelete" class="list-group-item">DELETE</a></div>
+            <div class="col"><a href="/AdminBrandUpdate" class="list-group-item">UPDATE</a></div>
+        </div>
+
+        <br>
+         <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                 <form class="form-inline" method="POST">
+                      <div class="form-group mx-sm-3 mb-2">
+                        <input type="text" class="form-control" name="nume_brand" placeholder="Cauta by Nume Brand">
+                      </div>
+                      <button type="submit" class="btn btn-dark mb-2" name="brand_search">Cauta</button>
+                </form>
+            </div>
+         </div>
+
+    </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <!--<th scope="col">ID_Brand</th>-->
+      <th scope="col">Nume Brand</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% for i in table %}
+        <tr>
+          <!--<th scope="row">{{i[0]}}</th>-->
+          <td>{{i[1]}}</td>
+        </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}
+</body>
+</html>

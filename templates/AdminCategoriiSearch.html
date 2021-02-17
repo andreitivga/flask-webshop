@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+</head>
+<body>
+{% block content %}
+<div class="container">
+    <div class="container">
+        <div class="row row-cols-3">
+            <div class="col"><a href="/AdminCategoriiInsert" class="list-group-item">INSERT</a></div>
+            <div class="col"><a href="/AdminCategoriiDelete" class="list-group-item">DELETE</a></div>
+            <div class="col"><a href="/AdminCategoriiUpdate" class="list-group-item">UPDATE</a></div>
+        </div>
+    </div>
+</div>
+
+{% if i %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <!--<th scope="col">ID_BrandCategorie</th>-->
+      <th scope="col">Nume Categorie</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <!--<th scope="row">{{i[0]}}</th>-->
+      <td>{{i[1]}}</td>
+    </tr>
+
+  </tbody>
+</table>
+
+{% else %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <h2>Nu exista categoria cautata.</h2> <br>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <a href="/AdminCategorii"><h2>Incercati din nou cu alt nume de categorie.</h2></a>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
+</body>
+</html>

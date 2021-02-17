@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Eroare</title>
+</head>
+<body>
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <h2>Eroare! Nu poti adauga produsul in cart daca exista deja acolo,</h2> <br>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <a href="/home"><h2>Intoarceti-va la home.</h2></a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+</body>
+</html>

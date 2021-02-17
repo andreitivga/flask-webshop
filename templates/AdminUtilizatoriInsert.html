@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+</head>
+<body>
+{% block content %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+             <h2>Insert Utilizator</h2>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+        <form method = 'POST'>
+             <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+              <input type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="email">
+             </div>
+
+              <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Parola</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="pass">
+             </div>
+
+              <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Nume</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nume">
+             </div>
+
+           <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Prenume</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="prenume">
+             </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Varsta</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="varsta">
+             </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Nr Tel</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nr_telefon">
+             </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Strada</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="strada">
+             </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Nr Strada</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nr_strada">
+             </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Cod Postal</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cod_postal">
+             </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Oras</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="oras">
+             </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Judet</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="judet">
+             </div>
+
+            <div class="input-group mb-3">
+                <div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Insert
+						</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+</body>
+</html>

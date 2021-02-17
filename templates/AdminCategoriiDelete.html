@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+</head>
+<body>
+{% block content %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+             <h2>Delete Categorie (by Nume Categorie)</h2>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+        <form method = 'POST'>
+             <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Nume Categorie</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nume_categorie">
+             </div>
+
+            <div class="input-group mb-3">
+                <div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Delete
+						</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Detalii Comanda</title>
+</head>
+<body>
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <h2>Detalii Comanda #{{id_comanda}}</h2> <br>
+        </div>
+    </div>
+
+{% for prod in prods %}
+<div class="card mb-3">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="/static{{prod[8]}}" class="card-img">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h3 class="card-title">{{prod[0]}}</h3>
+          <p><h4>Pret Bucata: {{prod[1]}} lei</h4></p>
+          <br>
+          <p class="card-text"><h5>Categorie: {{prod[2]}} <br>
+                    Brand: {{prod[3]}} <br>
+                    Tip: {{prod[4]}} <br>
+                    Varsta: {{prod[5]}} <br>
+                    {{prod[6]}} g <br> <br>
+                    Cantitate: {{prod[7]}} <br>
+                    Pret Total: {{prod[9]}} lei</h5>
+          </p>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+{% endfor %}
+</div>
+
+{% endblock %}
+</body>
+</html>

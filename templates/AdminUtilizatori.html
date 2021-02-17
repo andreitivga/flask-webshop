@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+</head>
+<body>
+{% block content %}
+
+<div class="container">
+    <div class="row row-cols-3">
+        <div class="col"><a href="/AdminUtilizatoriInsert" class="list-group-item">INSERT</a></div>
+        <div class="col"><a href="/AdminUtilizatoriDelete" class="list-group-item">DELETE</a></div>
+        <div class="col"><a href="/AdminUtilizatoriUpdate" class="list-group-item">UPDATE</a></div>
+    </div>
+    <br>
+     <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+             <form class="form-inline" method="POST">
+                  <div class="form-group mx-sm-3 mb-2">
+                    <input type="email" class="form-control" name="email" placeholder="Cauta by email">
+                  </div>
+                  <button type="submit" class="btn btn-dark mb-2" name="email_search">Cauta</button>
+            </form>
+        </div>
+     </div>
+
+</div>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <!--<th scope="col">ID_Utilizator</th>-->
+      <th scope="col">Email</th>
+      <th scope="col">Parola</th>
+      <th scope="col">Nume</th>
+      <th scope="col">Prenume</th>
+      <th scope="col">Varsta</th>
+      <th scope="col">Nr_Tel</th>
+      <th scope="col">Strada</th>
+      <th scope="col">Nr_Strada</th>
+      <th scope="col">Cod_Postal</th>
+      <th scope="col">Oras</th>
+      <th scope="col">Judet</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% for i in table %}
+        <tr>
+          <!--<th scope="row">{{i[0]}}</th>-->
+          <td>{{i[1]}}</td>
+          <td>{{i[2]}}</td>
+          <td>{{i[3]}}</td>
+          <td>{{i[4]}}</td>
+          <td>{{i[5]}}</td>
+          <td>{{i[6]}}</td>
+          <td>{{i[7]}}</td>
+          <td>{{i[8]}}</td>
+          <td>{{i[9]}}</td>
+          <td>{{i[10]}}</td>
+          <td>{{i[11]}}</td>
+        </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}
+</body>
+</html>

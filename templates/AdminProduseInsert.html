@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+</head>
+<body>
+{% block content %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+             <h2>Insert Produse</h2>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+        <form method = 'POST'>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Nume Produs</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nume">
+             </div>
+
+              <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Nume Categorie</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nume_categorie">
+             </div>
+
+              <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Nume Brand</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="nume_brand">
+             </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Pret</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="pret">
+             </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Tip Produs</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="tip">
+             </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Varsta Animal</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="varsta">
+             </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Cantitate</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="cantitate_ramasa">
+             </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Gramaj</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="gramaj">
+             </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Poza (Path)</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" name="poza">
+             </div>
+
+            <div class="input-group mb-3">
+                <div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Insert
+						</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+</body>
+</html>

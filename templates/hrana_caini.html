@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Hrana Caini</title>
+</head>
+<body>
+    {% block content %}
+    <div class="container">
+         <div class="row">
+             {% for prod in prods %}
+                <div class="col-lg-3 col-md-6 mb-4">
+                  <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="/static{{prod[9]}}"></a>
+                    <div class="card-body">
+                      <h2 class="card-title">
+                        {{prod[3]}}
+                      </h2>
+                      <h4>{{prod[4]}} lei</h4>
+                      <p class="card-text">Categorie: {{prod[1]}} <br>
+                        Brand: {{prod[2]}} <br>
+                        Tip: {{prod[5]}} <br>
+                        Varsta: {{prod[6]}} <br>
+                          {{prod[8]}} g <br>
+                      </p>
+                    </div>
+                    <div class="card-footer">
+
+                      <form method="POST">
+                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Cantitate</label>
+                          <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="{{prod[3]}}">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                        <button type="submit" class="btn btn-dark btn-sm my-1">Adauga in Cos</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+             {% endfor %}
+          </div>
+    </div>
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+</head>
+<body>
+{% block content %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+             <h2>Pagina Admin</h2>
+        </div>
+    </div>
+    <br>
+     <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+             <h2>Tabele</h2>
+        </div>
+    </div>
+    <br>
+
+   <div class="row row-cols-4">
+        <div class="col"><a href="/AdminUtilizatori" class="list-group-item"><h4>Utilizatori</h4></a></div>
+        <div class="col"><a href="/AdminProduse" class="list-group-item"><h4>Produse</h4></a></div>
+        <div class="col"><a href="/AdminBrand" class="list-group-item"><h4>Brand</h4></a></div>
+        <div class="col"><a href="/AdminCategorii" class="list-group-item"><h4>Categorii de hrana</h4></a></div>
+    </div>
+<br>
+<br>
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+             <h2>Utilizatorul cu cele mai multe comenzi</h2>
+        </div>
+    </div>
+    <br>
+<div class="row">
+
+          <div class="col-lg-3">
+            <h4>Statistici</h4>
+            <div class="list-group">
+              <a href="/admin" class="list-group-item"><h5>Intoarce-te la admin</h5></a>
+            </div>
+            <br>
+            <br>
+
+          </div>
+          <!-- /.col-lg-3 -->
+
+          <div class="col-lg-9">
+          <form method="POST">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Email Utilizator</th>
+                  <th scope="col">Numar Comenzi</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                    <tr>
+                        <td><h4>{{rez[0]}}</h4></td>
+                        <td><h4>{{rez[1]}}</h4></td>
+                    </tr>
+
+              </tbody>
+            </table>
+          </form>
+          </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+</head>
+<body>
+{% block content %}
+    {% if produse_cart %}
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <h2>Cosul de cumparaturi</h2> <br>
+            </div>
+        </div>
+
+    {% for prod in prods %}
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="/static{{prod[9]}}" class="card-img">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h3 class="card-title">{{prod[3]}}</h3>
+              <p><h4>Pret bucata: {{prod[4]}} lei</h4></p>
+              <br>
+              <p class="card-text"><h5>Categorie: {{prod[1]}} <br>
+                        Brand: {{prod[2]}} <br>
+                        Tip: {{prod[5]}} <br>
+                        Varsta: {{prod[6]}} <br>
+                        {{prod[8]}} g <br> <br>
+              Cantitate: {{prod[10]}} <br>
+              Pret total: {{prod[11]}} lei</h5>
+              </p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    {% endfor %}
+
+    <br>
+
+     <div class="card">
+      <h2 class="card-header">Sumar Comanda</h2>
+      <div class="card-body">
+        <h3 class="card-title">Cost total produse: {{total_plata}} lei</h3>
+          <p class="card-text"><h5>Livrarea este gratuita si se va face la adresa specifica contului.</h5></p>
+          <p class="card-text"><h5>Daca ai adaugat un produs din greseala, va trebui sa stergi tot cosul si sa adaugi din nou produsele dorite.</h5></p>
+          <br>
+
+          <form method="POST">
+            <button type="submit" class="btn btn-dark my-1" name="comanda">Plaseaza comanda</button>
+            <button type="submit" class="btn btn-dark my-1" name="sterge">Sterge cosul</button>
+        </form>
+
+      </div>
+    </div>
+        <br>
+
+    </div>
+
+    {% else %}
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <h2>Nu aveti nici un produs in cosul de cumparaturi momentan.</h2> <br>
+            </div>
+        </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-auto">
+                <a href="/home"><h2>Intoarceti-va la home.</h2></a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+{% endblock %}
+</body>
+</html>

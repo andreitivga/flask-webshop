@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Comenzile Mele</title>
+</head>
+<body>
+{% block content %}
+
+{% if rez %}
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <h2>Comenzile Mele ({{email}})</h2> <br>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+           <h2>Pentru a vedea mai multe detalii despre o comanda anume, dati click pe</h2></a>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+           <h2>butonul detalii.</h2></a>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+<div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-3">
+            <h4>Statistici interesante</h4>
+            <div class="list-group">
+            <form method="POST">
+              <div class="list-group-item"><h5>Comanda cu cele mai multe produse</h5>
+              <button type="submit" class="btn btn-dark btn-sm my-1" name="stat1">Vezi</button></div>
+
+              <div class="list-group-item"><h5>Comanda cea mai scumpa care contine un produs de la un brand ales de tine</h5>
+              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="brand">
+                <option value="" selected>Alege...</option>
+                {% for j in b %}}
+                <option value="{{j[0]}}">{{j[0]}}</option>
+                {% endfor %}
+              </select>
+              <button type="submit" class="btn btn-dark btn-sm my-1" name="stat2">Vezi</button></div>
+
+              <div class="list-group-item"><h5>Comanda cea mai veche care contine un produs din categoria aleasa de tine</h5>
+              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="categorie">
+                <option value="" selected>Alege...</option>
+                {% for j in c %}}
+                <option value="{{j[0]}}">{{j[0]}}</option>
+                {% endfor %}
+              </select>
+              <button type="submit" class="btn btn-dark btn-sm my-1" name="stat3">Vezi</button></div>
+            </form>
+            </div>
+
+            <br>
+            <br>
+
+          </div>
+          <!-- /.col-lg-3 -->
+
+          <div class="col-lg-9">
+          <form method="POST">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Numar Comanda</th>
+                  <th scope="col">Numar Produse</th>
+                  <th scope="col">Total_Plata</th>
+                  <th scope="col">Data Comanda</th>
+                </tr>
+              </thead>
+              <tbody>
+
+
+              {% for i in rez %}
+                    <tr>
+
+                        <td><h4>Comanda #{{i[0]}}</h4>
+                            <br>
+                             <button type="submit" class="btn btn-dark btn-sm my-1" name="{{i[0]}}">Detalii</button>
+                        </td>
+                        <td><h4>{{i[1]}}</h4></td>
+                        <td><h4>{{i[2]}} lei</h4></td>
+                        <td><h4>{{i[3]}}</h4></td>
+                    </tr>
+                {% endfor %}
+
+              </tbody>
+            </table>
+          </form>
+          </div>
+
+        </div>
+    </div>
+
+{% else %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <h2>Nu ai efectuat vreo comanda pana acum.</h2> <br>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <a href="/home"><h2>Intoarceti-va la home.</h2></a>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+</body>
+</html>

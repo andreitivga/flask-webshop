@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+   {% block title %} Contul meu {% endblock %}
+</head>
+<body>
+{% block content %}
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
+          <form id="tab" class="login100-form validate-form flex-sb flex-w" method = 'POST'>
+            <span class="login100-form-title p-b-32">
+                My Account
+            </span>
+
+            <span class="login100-form-title p-b-32">
+                Iti poti verifica si actualiza informatiile contului.
+            </span>
+              <span>Email - Nu se poate modifica / actualiza</span>
+                <div class="wrap-input100">
+                    <input class="input100" value={{acc[1]}} type="email" name="email" >
+                    <span class="focus-input100"></span>
+                </div>
+
+               <span>Parola</span>
+                <div class="wrap-input100">
+                    <span class="btn-show-pass">
+                        <i class="fa fa-eye"></i>
+                    </span>
+                    <input class="input100" value={{acc[2]}} type="password" name="pass" >
+                    <span class="focus-input100"></span>
+                </div>
+
+              <span>Nume</span>
+                <div class="wrap-input100">
+                    <input class="input100" value={{acc[3]}} type="text" name="nume" >
+                    <span class="focus-input100"></span>
+                </div>
+
+              <span>Prenume</span>
+                <div class="wrap-input100">
+                    <input class="input100" value={{acc[4]}} type="text" name="prenume" >
+                    <span class="focus-input100"></span>
+                </div>
+
+              <span>Varsta</span>
+                <div class="wrap-input100">
+                    <input class="input100" value={{acc[5]}} type="text" name="varsta" >
+                    <span class="focus-input100"></span>
+                </div>
+
+              <span>Nr_Telefon</span>
+                <div class="wrap-input100">
+                    <input class="input100" value={{acc[6]}} type="text" name="nr_telefon" >
+                    <span class="focus-input100"></span>
+                </div>
+
+              <span>Strada</span>
+                <div class="wrap-input100">
+                    <input class="input100" value={{acc[7]}} type="text" name="strada" >
+                    <span class="focus-input100"></span>
+                </div>
+
+              <span>Nr Strada</span>
+                <div class="wrap-input100">
+                    <input class="input100" value={{acc[8]}} type="text" name="nr_strada" >
+                    <span class="focus-input100"></span>
+                </div>
+
+              <span>Cod Postal</span>
+                <div class="wrap-input100">
+                    <input class="input100" value={{acc[9]}} type="text" name="cod_postal" >
+                    <span class="focus-input100"></span>
+                </div>
+
+              <span>Oras</span>
+                <div class="wrap-input100">
+                    <input class="input100" value={{acc[10]}} type="text" name="oras" >
+                    <span class="focus-input100"></span>
+                </div>
+
+              <span>Judet</span>
+                <div class="wrap-input100">
+                    <input class="input100" value={{acc[11]}} type="text" name="judet" >
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Update
+						</button>
+                </div>
+          </form>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}
+

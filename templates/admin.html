@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+</head>
+<body>
+{% block content %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+             <h2>Pagina Admin</h2>
+        </div>
+    </div>
+    <br>
+     <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+             <h2>Tabele</h2>
+        </div>
+    </div>
+    <br>
+
+   <div class="row row-cols-4">
+        <div class="col"><a href="/AdminUtilizatori" class="list-group-item"><h4>Utilizatori</h4></a></div>
+        <div class="col"><a href="/AdminProduse" class="list-group-item"><h4>Produse</h4></a></div>
+        <div class="col"><a href="/AdminBrand" class="list-group-item"><h4>Brand</h4></a></div>
+        <div class="col"><a href="/AdminCategorii" class="list-group-item"><h4>Categorii de hrana</h4></a></div>
+    </div>
+<br>
+<br>
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+             <h2>Toate comenzile realizate de utilizatori</h2>
+        </div>
+    </div>
+    <br>
+<div class="row">
+
+          <div class="col-lg-3">
+            <h4>Statistici</h4>
+            <div class="list-group">
+            <form method="POST">
+              <div class="list-group-item"><h5>Utilizatorul cu cele mai multe comenzi</h5>
+              <button type="submit" class="btn btn-dark btn-sm my-1" name="stat1">Vezi</button></div>
+
+              <div class="list-group-item"><h5>Utilizatorul care a platit cel mai mult</h5>
+              <button type="submit" class="btn btn-dark btn-sm my-1" name="stat2">Vezi</button></div>
+            </form>
+            </div>
+
+            <br>
+            <br>
+
+          </div>
+          <!-- /.col-lg-3 -->
+
+          <div class="col-lg-9">
+          <form method="POST">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Numar Comanda</th>
+                  <th scope="col">Email Utilizator</th>
+                  <th scope="col">Numar Produse</th>
+                  <th scope="col">Total_Plata</th>
+                  <th scope="col">Data Comanda</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              {% for i in rez %}
+                    <tr>
+
+                        <td><h4>Comanda #{{i[0]}}</h4>
+                            <br>
+                             <button type="submit" class="btn btn-dark btn-sm my-1" name="{{i[0]}}">Detalii</button>
+                        </td>
+                        <td><h4>{{i[1]}}</h4></td>
+                        <td><h4>{{i[2]}}</h4></td>
+                        <td><h4>{{i[3]}} lei</h4></td>
+                        <td><h4>{{i[4]}}</h4></td>
+                    </tr>
+                {% endfor %}
+
+              </tbody>
+            </table>
+          </form>
+          </div>
+
+        </div>
+    </div>
+
+{% endblock %}
+</body>
+</html>

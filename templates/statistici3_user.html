@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Comenzile Mele</title>
+</head>
+<body>
+{% block content %}
+
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <h2>Comenzile Mele ({{email}})</h2> <br>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+           <h2>Pentru a vedea mai multe detalii despre o comanda anume, dati click pe</h2></a>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+           <h2>butonul detalii.</h2></a>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+<div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-3">
+            <h4>Statistici interesante</h4>
+            <div class="list-group">
+              <a href="/comenzile_mele" class="list-group-item"><h5>Intoarce-te la comenzile tale</h5></a>
+            </div>
+            <br>
+            <br>
+
+          </div>
+          <!-- /.col-lg-3 -->
+
+          <div class="col-lg-9">
+          <form method="POST">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Numar Comanda</th>
+                  <th scope="col">Numar Produse</th>
+                  <th scope="col">Total_Plata</th>
+                  <th scope="col">Data Comanda</th>
+                </tr>
+              </thead>
+              <tbody>
+
+
+              {% for i in rez %}
+                    <tr>
+
+                        <td><h4>Comanda #{{i[0]}}</h4>
+                            <br>
+                             <button type="submit" class="btn btn-dark btn-sm my-1" name="{{i[0]}}">Detalii</button>
+                        </td>
+                        <td><h4>{{i[1]}}</h4></td>
+                        <td><h4>{{i[2]}} lei</h4></td>
+                        <td><h4>{{i[3]}}</h4></td>
+                    </tr>
+                {% endfor %}
+
+              </tbody>
+            </table>
+          </form>
+          </div>
+
+        </div>
+    </div>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+</head>
+<body>
+{% block content %}
+<div class="container">
+    <div class="container">
+        <div class="row row-cols-3">
+            <div class="col"><a href="/AdminProduseInsert" class="list-group-item">INSERT</a></div>
+            <div class="col"><a href="/AdminProduseDelete" class="list-group-item">DELETE</a></div>
+            <div class="col"><a href="/AdminProduseUpdate" class="list-group-item">UPDATE</a></div>
+        </div>
+    </div>
+
+</div>
+
+{% if i %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <!--<th scope="col">ID_Produse</th>-->
+      <th scope="col">Nume Produs</th>
+      <th scope="col">Nume Categorie</th>
+      <th scope="col">Nume Brand</th>
+      <th scope="col">Pret</th>
+      <th scope="col">Tip Produs</th>
+      <th scope="col">Varsta Animal</th>
+      <th scope="col">Cantitate_Ramasa</th>
+      <th scope="col">Gramaj</th>
+    </tr>
+  </thead>
+  <tbody>
+
+        <tr>
+          <!--<th scope="row">{{i[0]}}</th>-->
+          <td>{{i[3]}}</td>
+          <td>{{i[1]}}</td>
+          <td>{{i[2]}}</td>
+          <td>{{i[4]}}</td>
+          <td>{{i[5]}}</td>
+          <td>{{i[6]}}</td>
+          <td>{{i[7]}}</td>
+          <td>{{i[8]}}</td>
+        </tr>
+
+  </tbody>
+</table>
+
+{% else %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <h2>Nu exista produsul cautat.</h2> <br>
+        </div>
+    </div>
+
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <a href="/AdminProduse"><h2>Incercati din nou cu alt nume de produs.</h2></a>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
+</body>
+</html>
